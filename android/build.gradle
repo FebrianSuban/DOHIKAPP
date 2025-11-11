@@ -1,0 +1,53 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+  repositories {
+    google()
+    mavenCentral()
+  }
+  dependencies {
+    classpath('com.android.tools.build:gradle')
+    classpath('com.facebook.react:react-native-gradle-plugin')
+    classpath('org.jetbrains.kotlin:kotlin-gradle-plugin')
+  }
+}
+
+// Project-wide Android SDK / build settings used by app/build.gradle via rootProject.ext
+ext {
+  compileSdkVersion = 33
+  targetSdkVersion = 33
+  minSdkVersion = 21
+  buildToolsVersion = "33.0.2"
+  // Match the NDK version observed in build outputs; adjust if your environment uses a different NDK
+  ndkVersion = "27.1.12297006"
+  // Module-prefixed properties for libraries that defensively read their own ext keys
+  // (some npm modules use e.g. 'TextRecognition_compileSdkVersion' etc.).
+  TextRecognition_compileSdkVersion = compileSdkVersion
+  TextRecognition_targetSdkVersion = targetSdkVersion
+  TextRecognition_minSdkVersion = minSdkVersion
+  TextRecognition_buildToolsVersion = buildToolsVersion
+}
+
+def reactNativeAndroidDir = new File(
+  providers.exec {
+    workingDir(rootDir)
+    commandLine("node", "--print", "require.resolve('react-native/package.json')")
+  }.standardOutput.asText.get().trim(),
+  "../android"
+)
+
+allprojects {
+  repositories {
+    maven {
+      // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+      url(reactNativeAndroidDir)
+    }
+
+    google()
+    mavenCentral()
+    maven { url 'https://www.jitpack.io' }
+  }
+}
+
+apply plugin: "expo-root-project"
+apply plugin: "com.facebook.react.rootproject"
