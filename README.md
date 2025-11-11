@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DOHIKAPP - Aplikasi Manajemen Keuangan Personal
 
 DOHIKAPP adalah aplikasi mobile dan web untuk mengelola keuangan pribadi dengan mudah. Aplikasi ini membantu pengguna melacak pendapatan, pengeluaran, mengkategorikan transaksi, dan membuat laporan keuangan.
@@ -499,3 +500,6 @@ Untuk pertanyaan, bug report, atau saran:
 
 **Last Updated:** November 11, 2025  
 **Maintained by:** Febrian Suban
+=======
+
+>>>>>>> 7803c2fe8c2ca0a9f555d4aa87fe4c155fbeee38
