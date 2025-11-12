@@ -2,6 +2,9 @@
 
 DOHIKAPP adalah aplikasi mobile dan web untuk mengelola keuangan pribadi dengan mudah. Aplikasi ini membantu pengguna melacak pendapatan, pengeluaran, mengkategorikan transaksi, dan membuat laporan keuangan.
 
+## 📋 DEMO APP
+https://github.com/FebrianSuban/DOHIKAPP/blob/main/Demo.mp4
+
 ## 📋 Daftar Isi
 
 - [Fitur Utama](#fitur-utama)
